@@ -10,8 +10,13 @@ blad1 = 'To pole jest wymagane'
 
 
 class KlasaForm(FlaskForm):
-    pass
+    id = HiddenField()
+    klasa = CharFieldField('Klasa: ', validators=[Required(message=blad1)])
+    rok_naboru = IntegerField()
+    rok_matury = IntegerField()
 
 
 class UczenForm(FlaskForm):
-    pass
+    imie = CharField()
+    nazwisko = CharField()
+    plec = IntegerField()
